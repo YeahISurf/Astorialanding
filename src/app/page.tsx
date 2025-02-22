@@ -1,4 +1,5 @@
 // Remove unused import since Image component is not used in this file
+'use client';
 
 export default function Home() {
   const handleDemoRequest = () => {
