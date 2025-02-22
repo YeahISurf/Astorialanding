@@ -4,7 +4,7 @@ export default function Home() {
   const handleDemoRequest = () => {
     // Track CTA click event
     if (typeof window !== 'undefined' && 'gtag' in window) {
-      // @ts-expect-error
+      // @ts-expect-error - gtag is added by Google Analytics script and not typed in window object
       window.gtag('event', 'cta_click', {
         event_category: 'Engagement',
         event_label: 'Demo Request'
