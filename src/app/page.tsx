@@ -1,10 +1,10 @@
-// Remove unused import since Image component is not used in this file
+'use client';
 
 export default function Home() {
   const handleDemoRequest = () => {
     // Track CTA click event
     if (typeof window !== 'undefined' && 'gtag' in window) {
-      // @ts-ignore
+      // @ts-expect-error: Google Analytics gtag is not included in window type definitions
       window.gtag('event', 'cta_click', {
         event_category: 'Engagement',
         event_label: 'Demo Request'
@@ -54,11 +54,11 @@ export default function Home() {
         <h2 className="text-3xl font-bold text-center mb-12 text-[#006400]">What Our Clients Say</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           <div className="bg-white p-8 rounded-lg shadow-lg">
-            <p className="text-gray-600 mb-6">"ASTRORIA's predictive analytics have transformed our approach to game strategy. We've seen a 20% improvement in our win rate since implementation."</p>
+            <p className="text-gray-600 mb-6">&ldquo;ASTRORIA&apos;s predictive analytics have transformed our approach to game strategy. We&apos;ve seen a 20% improvement in our win rate since implementation.&rdquo;</p>
             <p className="font-semibold text-[#006400]">— Coach John Anderson, Elite Sports</p>
           </div>
           <div className="bg-white p-8 rounded-lg shadow-lg">
-            <p className="text-gray-600 mb-6">"The real-time insights provided by ASTRORIA have been game-changing for our team's performance analysis and decision-making process."</p>
+            <p className="text-gray-600 mb-6">&ldquo;The real-time insights provided by ASTRORIA have been game-changing for our team&apos;s performance analysis and decision-making process.&rdquo;</p>
             <p className="font-semibold text-[#006400]">— Sarah Martinez, Performance Director</p>
           </div>
         </div>
